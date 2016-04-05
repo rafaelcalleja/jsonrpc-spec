@@ -1,0 +1,36 @@
+{
+    "name": "rc/jsonrpc",
+    "type": "library",
+    "description": "Library for Json RPC 2.0 Specification",
+    "homepage": "https://github.com/rafaelcalleja/jsonrpc-spec",
+    "keywords": ["json", "rpc", "jsonrpc", "specification", "2.0", "json-rpc"],
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Rafael Calleja",
+        "email": "rafaelcalleja@gmail.com",
+        "homepage": "https://github.com/rafaelcalleja"
+      }
+    ],
+    "require": {
+      "ramsey/uuid": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+	        "JsonRPC\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JsonRPC\\Tests\\": "tests/JsonRPC"
+        }
+    },
+    "config": {
+     "platform": {
+      "php": "5.5.9"
+     }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+
+}
