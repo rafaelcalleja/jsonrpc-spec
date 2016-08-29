@@ -11,10 +11,15 @@
 
 namespace JsonRPC\Request;
 
+use JsonRPC\Batch\BatchTrait;
+use JsonRPC\Batch\RecoveryTrait;
 use JsonRPC\Exception\InvalidRequestException;
 
 class Request extends Notification implements RequestInterface
 {
+    use BatchTrait;
+    use RecoveryTrait;
+
     /**
      * @var RequestId
      */
@@ -78,7 +83,7 @@ class Request extends Notification implements RequestInterface
         );
     }
 
-    protected static function fromObject($stdClass)
+    public static function fromObject($stdClass)
     {
         $stdClass->params = empty($stdClass->params) ? null : json_decode(json_encode($stdClass->params), true);
 

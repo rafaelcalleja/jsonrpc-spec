@@ -45,5 +45,4 @@ trait RecoveryTrait
                 static::fromObject($data);
     }
 
-    abstract protected static function fromObject($data);
 }

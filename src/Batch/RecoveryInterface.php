@@ -14,4 +14,6 @@ namespace JsonRPC\Batch;
 interface RecoveryInterface
 {
     public static function fromString($string);
+
+    public static function fromObject($data);
 }

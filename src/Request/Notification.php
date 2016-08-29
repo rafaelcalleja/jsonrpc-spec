@@ -11,10 +11,15 @@
 
 namespace JsonRPC\Request;
 
+use JsonRPC\Batch\BatchTrait;
+use JsonRPC\Batch\RecoveryTrait;
 use JsonRPC\Exception\InvalidRequestException;
 
 class Notification extends Procedure
 {
+    use BatchTrait;
+    use RecoveryTrait;
+
     public function equals($notification)
     {
         if (!$notification instanceof self && count($notification) > 0) {
@@ -59,7 +64,7 @@ class Notification extends Procedure
         return $json;
     }
 
-    protected static function fromObject($stdClass)
+    public static function fromObject($stdClass)
     {
         $stdClass->params = empty($stdClass->params) ? null : json_decode(json_encode($stdClass->params), true);
 

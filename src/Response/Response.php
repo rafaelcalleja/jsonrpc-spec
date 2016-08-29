@@ -189,7 +189,7 @@ class Response extends \JsonRPC\Protocol implements \JsonSerializable, BatchInte
             ;
     }
 
-    protected static function fromObject($stdClass)
+    public static function fromObject($stdClass)
     {
         $object = new self(null);
 
