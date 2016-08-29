@@ -17,9 +17,6 @@ use JsonRPC\Exception\InvalidRequestException;
 
 class Request extends Notification implements RequestInterface
 {
-    use BatchTrait;
-    use RecoveryTrait;
-
     /**
      * @var RequestId
      */

@@ -17,9 +17,7 @@ use JsonRPC\Exception\InvalidRequestException;
 
 class Notification extends Procedure
 {
-    use BatchTrait;
-    use RecoveryTrait;
-
+    
     public function equals($notification)
     {
         if (!$notification instanceof self && count($notification) > 0) {
